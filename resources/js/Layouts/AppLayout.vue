@@ -67,22 +67,14 @@ const logout = () => {
                                 <JetDropdown align="right" width="48">
                                     <template #trigger>
                                         <button
-                                            class="flex items-center text-sm border-2 border-transparent rounded-full focus:outline-none transition group space-x-2"
+                                            class="flex text-sm border-2 border-transparent rounded-full focus:outline-none transition hover:scale-110"
                                         >
                                             <span
-                                                class="pr-2 group-hover:pr-4 group-focus:pr-4 transition-padding"
+                                                class="pr-2 group-hover:pr-4 capitalize"
                                                 >{{
                                                     $page.props.user.name
                                                 }}</span
                                             >
-                                            <img
-                                                class="h-12 w-12 rounded-full object-cover group-hover:scale-125 group-focus:scale-125 transform transition border border-mango-700"
-                                                :src="
-                                                    $page.props.user
-                                                        .profile_photo_url
-                                                "
-                                                :alt="$page.props.user.name"
-                                            />
                                         </button>
                                     </template>
 

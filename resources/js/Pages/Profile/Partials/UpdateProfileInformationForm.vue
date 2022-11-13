@@ -87,46 +87,6 @@ const clearPhotoFileInput = () => {
         </template>
 
         <template #form>
-            <!-- Profile Photo -->
-            <div class="col-span-6 sm:col-span-4 flex items-end space-x-4">
-                <!-- Profile Photo File Input -->
-                <div>
-                    <input
-                        ref="photoInput"
-                        type="file"
-                        class="hidden"
-                        @change="updatePhotoPreview"
-                    >
-                    <JetLabel for="photo" value="Photo" />
-                    <!-- Current Profile Photo -->
-                    <div v-show="! photoPreview" class="mt-2">
-                        <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full h-20 w-20 object-cover border border-mango-600">
-                    </div>
-                    <!-- New Profile Photo Preview -->
-                    <div v-show="photoPreview" class="mt-2">
-                        <span
-                            class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
-                            :style="'background-image: url(\'' + photoPreview + '\');'"
-                        />
-                    </div>
-                </div>
-
-                <JetSecondaryButton class="max-w-max h-10" type="button" @click.prevent="selectNewPhoto">
-                    Select A New Photo
-                </JetSecondaryButton>
-
-                <JetSecondaryButton
-                    v-if="user.profile_photo_path"
-                    type="button"
-                    class="mt-2"
-                    @click.prevent="deletePhoto"
-                >
-                    Remove Photo
-                </JetSecondaryButton>
-
-                <JetInputError :message="form.errors.photo" class="mt-2" />
-            </div>
-
             <!-- Name -->
             <div class="col-span-6 sm:col-span-4">
                 <JetLabel for="name" value="Name" />

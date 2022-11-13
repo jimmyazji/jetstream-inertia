@@ -1,10 +1,10 @@
 <script setup>
-import { computed, useSlots } from 'vue';
-import JetSectionTitle from './SectionTitle.vue';
+import { computed, useSlots } from "vue";
+import JetSectionTitle from "./SectionTitle.vue";
 
-defineEmits(['submitted']);
+defineEmits(["submitted"]);
 
-const hasActions = computed(() => !! useSlots().actions);
+const hasActions = computed(() => !!useSlots().actions);
 </script>
 
 <template>
@@ -18,17 +18,20 @@ const hasActions = computed(() => !! useSlots().actions);
             </template>
         </JetSectionTitle>
 
-        <div class="mt-5 md:mt-0 md:col-span-2">
+        <div class="mt-5 md:mt-0 md:col-span-2 shadow">
             <form @submit.prevent="$emit('submitted')">
                 <div
-                    class="px-4 py-5 bg-white dark:bg-zinc-800 transition-colors sm:p-6 shadow"
+                    class="px-4 py-5 bg-white dark:bg-zinc-800 transition-colors sm:p-6"
                 >
                     <div class="grid grid-cols-6 gap-6">
                         <slot name="form" />
                     </div>
                 </div>
 
-                <div v-if="hasActions" class="flex items-center justify-end px-4 py-3 bg-zinc-50 dark:bg-zinc-800 text-right sm:px-6 shadow">
+                <div
+                    v-if="hasActions"
+                    class="flex items-center justify-end px-4 py-3 bg-white dark:bg-zinc-800 text-right sm:px-6 transition-colors"
+                >
                     <slot name="actions" />
                 </div>
             </form>
