@@ -11,7 +11,7 @@ const theme = ref(localStorage.getItem("color-theme"));
     <button
         @click="toggleDark()"
         type="button"
-        class="text-gray-500 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm w-12 h-12 relative"
+        class="text-zinc-500 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-700 focus:outline-none focus:ring-4 focus:ring-zinc-200 dark:focus:ring-zinc-700 rounded-lg text-sm w-12 h-12 relative"
     >
         <svg
             class="w-5 h-5 absolute bottom-1/2 translate-y-1/2 right-1/2 translate-x-1/2 transition duration-200 delay-200"

@@ -1,6 +1,6 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
-import Welcome from '@/Jetstream/Welcome.vue';
+import Welcome from '@/Components/Welcome.vue';
 </script>
 
 <template>
@@ -13,7 +13,7 @@ import Welcome from '@/Jetstream/Welcome.vue';
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-xl">
+                <div class="bg-white dark:bg-zinc-800 overflow-hidden shadow-xl transition-colors">
                     <Welcome />
                 </div>
             </div>
