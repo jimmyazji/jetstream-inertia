@@ -5,7 +5,6 @@ import JetAuthenticationCardLogo from "@/Jetstream/AuthenticationCardLogo.vue";
 import JetButton from "@/Jetstream/Button.vue";
 import JetInput from "@/Jetstream/Input.vue";
 import JetCheckbox from "@/Jetstream/Checkbox.vue";
-import JetLabel from "@/Jetstream/Label.vue";
 import JetValidationErrors from "@/Jetstream/ValidationErrors.vue";
 import AppTheme from "@/Layouts/AppTheme.vue";
 
@@ -46,13 +45,14 @@ const submit = () => {
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
+        <form class="space-y-8 py-6" @submit.prevent="submit">
             <div>
-                <JetLabel for="email" value="Email" />
                 <JetInput
                     id="email"
                     v-model="form.email"
                     type="email"
+                    label="email"
+                    placeholder="jondoe@example.com"
                     class="mt-1 block w-full"
                     required
                     autofocus
@@ -60,11 +60,12 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <JetLabel for="password" value="Password" />
                 <JetInput
                     id="password"
                     v-model="form.password"
                     type="password"
+                    label="password"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                     class="mt-1 block w-full"
                     required
                     autocomplete="current-password"
@@ -77,7 +78,7 @@ const submit = () => {
                         v-model:checked="form.remember"
                         name="remember"
                     />
-                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-300"
+                    <span class="ml-2 text-sm"
                         >Remember me</span
                     >
                 </label>
@@ -87,7 +88,7 @@ const submit = () => {
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
-                    class="underline text-sm text-gray-600 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition"
+                    class="underline text-sm text-gray-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 transition"
                 >
                     Forgot your password?
                 </Link>

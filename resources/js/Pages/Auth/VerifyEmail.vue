@@ -4,6 +4,7 @@ import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import JetAuthenticationCard from '@/Jetstream/AuthenticationCard.vue';
 import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue';
 import JetButton from '@/Jetstream/Button.vue';
+import AppTheme from "@/Layouts/AppTheme.vue";
 
 const props = defineProps({
     status: String,
@@ -20,7 +21,9 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
 
 <template>
     <Head title="Email Verification" />
-
+    <nav class="fixed right-5 top-5">
+        <AppTheme />
+    </nav>
     <JetAuthenticationCard>
         <template #logo>
             <JetAuthenticationCardLogo />

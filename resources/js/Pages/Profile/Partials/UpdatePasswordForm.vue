@@ -6,7 +6,6 @@ import JetButton from '@/Jetstream/Button.vue';
 import JetFormSection from '@/Jetstream/FormSection.vue';
 import JetInput from '@/Jetstream/Input.vue';
 import JetInputError from '@/Jetstream/InputError.vue';
-import JetLabel from '@/Jetstream/Label.vue';
 
 const passwordInput = ref(null);
 const currentPasswordInput = ref(null);
@@ -49,12 +48,13 @@ const updatePassword = () => {
 
         <template #form>
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="current_password" value="Current Password" />
                 <JetInput
                     id="current_password"
                     ref="currentPasswordInput"
                     v-model="form.current_password"
                     type="password"
+                    label="Current Password"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                     class="mt-1 block w-full placeholder:text-mango-800 placeholder:opacity-70"
                     autocomplete="current-password"
                 />
@@ -62,12 +62,13 @@ const updatePassword = () => {
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="password" value="New Password" />
                 <JetInput
                     id="password"
                     ref="passwordInput"
                     v-model="form.password"
                     type="password"
+                    label="New Password"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                     class="mt-1 block w-full placeholder:text-mango-800 placeholder:opacity-70"
                     autocomplete="new-password"
                 />
@@ -75,11 +76,12 @@ const updatePassword = () => {
             </div>
 
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="password_confirmation" value="Confirm Password" />
                 <JetInput
                     id="password_confirmation"
                     v-model="form.password_confirmation"
                     type="password"
+                    label="Confirm Password"
+                    placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
                     class="mt-1 block w-full placeholder:text-mango-800 placeholder:opacity-70"
                     autocomplete="new-password"
                 />

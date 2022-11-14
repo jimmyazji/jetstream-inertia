@@ -7,6 +7,8 @@ import JetButton from '@/Jetstream/Button.vue';
 import JetInput from '@/Jetstream/Input.vue';
 import JetLabel from '@/Jetstream/Label.vue';
 import JetValidationErrors from '@/Jetstream/ValidationErrors.vue';
+import AppTheme from "@/Layouts/AppTheme.vue";
+
 
 const recovery = ref(false);
 
@@ -39,7 +41,9 @@ const submit = () => {
 
 <template>
     <Head title="Two-factor Confirmation" />
-
+    <nav class="fixed right-5 top-5">
+        <AppTheme />
+    </nav>
     <JetAuthenticationCard>
         <template #logo>
             <JetAuthenticationCardLogo />

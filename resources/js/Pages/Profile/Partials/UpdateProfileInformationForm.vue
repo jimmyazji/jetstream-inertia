@@ -89,11 +89,12 @@ const clearPhotoFileInput = () => {
         <template #form>
             <!-- Name -->
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="name" value="Name" />
                 <JetInput
                     id="name"
                     v-model="form.name"
                     type="text"
+                    label="name"
+                    placeholder="Jon Doe"
                     class="mt-1 block w-full"
                     autocomplete="name"
                 />
@@ -102,11 +103,12 @@ const clearPhotoFileInput = () => {
 
             <!-- Email -->
             <div class="col-span-6 sm:col-span-4">
-                <JetLabel for="email" value="Email" />
                 <JetInput
                     id="email"
                     v-model="form.email"
                     type="email"
+                    label="email"
+                    placeholder="jondoe@example.com"
                     class="mt-1 block w-full"
                 />
                 <JetInputError :message="form.errors.email" class="mt-2" />
